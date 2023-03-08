@@ -1,0 +1,132 @@
+name: save-in-sheets
+version: 0.1.0
+specVersion: v1beta
+
+displayName: Save form information in Google Spreadsheets
+description: Easily save the data from landing pages or contact forms directly into a Google Spreadsheet.
+
+license: Apache-2.0
+
+sourceUrl: https://github.com/amin3mej/firebase-save-in-sheets
+
+author:
+  authorName: Amin Djawadi
+  url: https://github.com/amin3mej
+  email: amin3mej@gmail.com
+
+billingRequired: true
+
+apis:
+  - apiName: sheets.googleapis.com
+    reason: Needed to use Spreadsheets API to write down the new data
+
+
+resources:
+  - name: saveRecord
+    type: firebaseextensions.v1beta.function
+    description: >-
+      Call this endpoint to save the provided data in the Google Spreadsheet
+    properties:
+      location: ${LOCATION}
+      runtime: nodejs16
+      httpsTrigger: {}
+
+params:
+  - param: LOCATION
+    label: Cloud Functions location
+    description: >-
+      Where do you want to deploy the functions created for this extension?
+      You usually want a location close to your database. Realtime Database
+      instances are located in `us-central1`. For help selecting a
+      location, refer to the [location selection
+      guide](https://firebase.google.com/docs/functions/locations).
+    type: select
+    options:
+      - label: Iowa (us-central1)
+        value: us-central1
+      - label: South Carolina (us-east1)
+        value: us-east1
+      - label: Northern Virginia (us-east4)
+        value: us-east4
+      - label: Los Angeles (us-west2)
+        value: us-west2
+      - label: Salt Lake City (us-west3)
+        value: us-west3
+      - label: Las Vegas (us-west4)
+        value: us-west4
+      - label: Warsaw (europe-central2)
+        value: europe-central2
+      - label: Belgium (europe-west1)
+        value: europe-west1
+      - label: London (europe-west2)
+        value: europe-west2
+      - label: Frankfurt (europe-west3)
+        value: europe-west3
+      - label: Zurich (europe-west6)
+        value: europe-west6
+      - label: Taiwan (asia-east1)
+        value: asia-east1
+      - label: Hong Kong (asia-east2)
+        value: asia-east2
+      - label: Tokyo (asia-northeast1)
+        value: asia-northeast1
+      - label: Osaka (asia-northeast2)
+        value: asia-northeast2
+      - label: Seoul (asia-northeast3)
+        value: asia-northeast3
+      - label: Mumbai (asia-south1)
+        value: asia-south1
+      - label: Singapore (asia-southeast1)
+        value: asia-southeast1
+      - label: Jakarta (asia-southeast2)
+        value: asia-southeast2
+      - label: Montreal (northamerica-northeast1)
+        value: northamerica-northeast1
+      - label: Sao Paulo (southamerica-east1)
+        value: southamerica-east1
+      - label: Sydney (australia-southeast1)
+        value: australia-southeast1
+    default: us-central1
+    required: true
+    immutable: true
+
+  - param: GOOGLE_API_CREDENTIALS_CLIENT_EMAIL
+    label: Client Email of the Service API
+    type: secret
+    required: true
+
+  - param: GOOGLE_API_CREDENTIALS_PRIVATE_KEY
+    label: Private Key of the Service API
+    type: secret
+    required: true
+
+  - param: GOOGLE_SPREADSHEET_ID
+    label: Spreadsheet ID
+    type: string
+    required: true
+
+  - param: GOOGLE_SPREADSHEET_SHEET_ID
+    label: Spreadsheet Sheet Name
+    type: string
+    default: Sheet1
+    required: true
+
+  - param: ALLOWED_FIELDS
+    label: Allowed column names
+    description: >-
+      Specifies a list of allowed column names for data processing or validation. Use commas to separate the allowed column names, or use an asterisk symbol (*) to allow any column name.
+    type: string
+    default: "*"
+    required: true
+
+  - param: APP_CHECK
+    label: Should use Firebase App Check to protect the API from abuse?
+    type: select
+    options:
+      - label: Yes, Use App Check to protect API
+        value: yes
+      - label: No, Do not use App Check to protect API
+        value: no
+    default: no
+    required: true
+    immutable: false

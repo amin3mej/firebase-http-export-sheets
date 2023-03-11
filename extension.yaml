@@ -1,13 +1,13 @@
-name: save-in-sheets
+name: http-export-sheets
 version: 0.1.0
 specVersion: v1beta
 
-displayName: Save form information in Google Spreadsheets
+displayName: Save Form Responses to Google Sheets
 description: Easily save the data from landing pages or contact forms directly into a Google Spreadsheet.
 
 license: Apache-2.0
 
-sourceUrl: https://github.com/amin3mej/firebase-save-in-sheets
+sourceUrl: https://github.com/amin3mej/firebase-http-export-sheets
 
 author:
   authorName: Amin Djawadi

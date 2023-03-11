@@ -1,4 +1,4 @@
-# Save in sheets
+# Save Form Responses to Google Sheets
 
 **Author**: Amin Djawadi (**[https://github.com/amin3mej](https://github.com/amin3mej)**)
 
@@ -6,7 +6,7 @@
 
 **Details**:  Use this extension to quickly create endpoints for your forms and save them in a [Google Spreadsheet](https://www.google.com/sheets/about). This extension will use official [Google APIs](https://developers.google.com/sheets/api/quickstart/nodejs) to save your data in the Google Spreadsheet.
 
-When calling the Save in sheets api, this extension:
+When calling the saveRecord api, this extension:
 
 - Based on the request body, add a new row to the designated spreadsheet
 - If necessary, modify the header column to include additional column(s)

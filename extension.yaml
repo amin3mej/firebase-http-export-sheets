@@ -18,14 +18,14 @@ billingRequired: true
 
 apis:
   - apiName: sheets.googleapis.com
-    reason: Needed to use Spreadsheets API to write down the new data
+    reason: Needed to put in the new data
 
 
 resources:
   - name: saveRecord
     type: firebaseextensions.v1beta.function
     description: >-
-      Call this endpoint to save the provided data in the Google Spreadsheet
+      Receive your data through a http post request and save that in the Spreadsheet
     properties:
       location: ${LOCATION}
       runtime: nodejs16
@@ -90,16 +90,6 @@ params:
     required: true
     immutable: true
 
-  - param: GOOGLE_API_CREDENTIALS_CLIENT_EMAIL
-    label: Client Email of the Service API
-    type: secret
-    required: true
-
-  - param: GOOGLE_API_CREDENTIALS_PRIVATE_KEY
-    label: Private Key of the Service API
-    type: secret
-    required: true
-
   - param: GOOGLE_SPREADSHEET_ID
     label: Spreadsheet ID
     type: string
@@ -130,3 +120,13 @@ params:
     default: no
     required: true
     immutable: false
+
+  - param: GOOGLE_API_CREDENTIALS_CLIENT_EMAIL
+    label: Client Email of the Service API [Not Required]
+    type: secret
+    required: false
+
+  - param: GOOGLE_API_CREDENTIALS_PRIVATE_KEY
+    label: Private Key of the Service API [Not Required]
+    type: secret
+    required: false

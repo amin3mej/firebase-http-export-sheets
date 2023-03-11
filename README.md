@@ -1,10 +1,25 @@
-Use this extension to quickly create endpoints for your forms and save them in a [Google Spreadsheet](https://www.google.com/sheets/about). This extension will use official [Google APIs](https://developers.google.com/sheets/api/quickstart/nodejs) to save your data in the Google Spreadsheet.
+# Save in sheets
 
-### Things you will need:
+**Author**: Amin Djawadi (**[https://github.com/amin3mej](https://github.com/amin3mej)**)
 
-- Firebase [Cloud Functions](https://console.firebase.google.com/project/_/functions) and must be enabled in your project's console. The extension will need these to function properly.
+**Description**: Easily save the data from landing pages or contact forms directly into a Google Spreadsheet.
 
-- A Google Spreadsheet file. If you don't have one, you can [Create a new one](https://docs.google.com/spreadsheets/create).
+**Details**:  Use this extension to quickly create endpoints for your forms and save them in a [Google Spreadsheet](https://www.google.com/sheets/about). This extension will use official [Google APIs](https://developers.google.com/sheets/api/quickstart/nodejs) to save your data in the Google Spreadsheet.
+
+When calling the Save in sheets api, this extension:
+
+- Based on the request body, add a new row to the designated spreadsheet
+- If necessary, modify the header column to include additional column(s)
+
+#### Additional setup
+
+Once you've installed this extension, make sure to grant it permission to write to your spreadsheet. Follow these steps:
+
+1. Find the account name for the installed extension in the [Service accounts](https://console.firebase.google.com/u/0/project/_/settings/serviceaccounts) section. The name will look something like `ext-extension-instance-id@project-id.iam.gserviceaccount.com`.
+2. Open the spreadsheet file you want to share. You must be the owner or have edit access to the spreadsheet.
+3. Click the "Share" button.
+4. Enter the extension account name found in step 1 and grant it write permission.
+5. Click "Send".
 
 #### Billing
 
@@ -27,3 +42,11 @@ To install an extension, your project must be on the [Blaze (pay as you go) plan
 - Firebase App Check: [Firebase App check](https://firebase.google.com/docs/app-check) helps protect your API resources from abuse by preventing unauthorized clients from accessing your backend resources. You can enable this parameter to enable App check.
 
 - Google Api Crendetials: By default, this extension will use the project's credentials to connect to the Google Spreadsheets Api but with `CLIENT_EMAIL` and `PRIVATE_KEY` you can override the default.
+
+**Cloud Functions:**
+
+- **saveRecord:** Receive your data through a http post request and save that in the Spreadsheet
+
+**APIs Used**:
+
+- sheets.googleapis.com (Reason: Needed to put in the new data)

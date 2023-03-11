@@ -10,12 +10,12 @@ When calling the saveRecord api, this extension:
 
 - Based on the request body, add a new row to the designated spreadsheet
 - If necessary, modify the header column to include additional column(s)
-
+ 
 #### Additional setup
 
 Once you've installed this extension, make sure to grant it permission to write to your spreadsheet. Follow these steps:
 
-1. Find the account name for the installed extension in the [Service accounts](https://console.firebase.google.com/u/0/project/_/settings/serviceaccounts) section. The name will look something like `ext-{extension-instance-id}@{project-id}.iam.gserviceaccount.com`.
+1. Find the account name for the installed extension in the [Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) section. The name will look something like `ext-{extension-instance-id}@{project-id}.iam.gserviceaccount.com`.
 2. Open the spreadsheet file you want to share. You must be the owner or have edit access to the spreadsheet.
 3. Click the "Share" button.
 4. Enter the extension account name found in step 1 and grant it write permission.

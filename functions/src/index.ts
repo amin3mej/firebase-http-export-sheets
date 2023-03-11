@@ -1,29 +1,28 @@
 import * as functions from "firebase-functions";
+
 import {applyAppCheck} from "./appcheck";
-import {getAllowedFields, normalize} from "./utilities";
-import {appendRow, getHeaderColumns, setNewHeaderColumns} from "./spreadsheet";
 import {extensionParameters} from "./parameters";
+import {appendRow, getHeaderColumns, setNewHeaderColumns} from "./spreadsheet";
+import {getAllowedFields, normalize} from "./utilities";
 
 process.on("unhandledRejection", (reason, p) => {
   console.error(reason, "Unhandled Rejection at Promise", p);
 });
 
-const EMPTY_CELL = "";
-
-
 export function generateNewRow(headerColumns: string[], requestBody: Record<string, object>) {
   const allowedFields = getAllowedFields();
 
   const values = headerColumns.map(((column) => {
-    if (!column || !Object.prototype.hasOwnProperty.call(requestBody, column)) { // No user input for this column
-      return EMPTY_CELL;
+    if (!column || !Object.prototype.hasOwnProperty.call(requestBody, column)) {
+      return extensionParameters.EMPTY_CELL;
     }
-    if (allowedFields.length > 0 && !allowedFields.includes(column)) { // the entered user input is not allowed anymore
-      return EMPTY_CELL;
+    if (allowedFields.length > 0 && !allowedFields.includes(column)) {
+      return extensionParameters.EMPTY_CELL;
     }
 
+    const value = normalize(requestBody[column]);
     delete requestBody[column];
-    return normalize(requestBody[column]);
+    return value;
   }));
 
   const newColumns: string[] = [];

@@ -1,4 +1,8 @@
+import * as functions from "firebase-functions";
+
 import {extensionParameters} from "./parameters";
+
+export const logger = functions.logger;
 
 export const normalize = (input: object): string => {
   if (["number", "string", "bigint"].includes(typeof input)) {
@@ -21,3 +25,4 @@ export const getAllowedFields = (): string[] => {
   }
   return allowedFields;
 };
+

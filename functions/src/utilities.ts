@@ -1,10 +1,10 @@
 import * as functions from "firebase-functions";
 
-import {extensionParameters} from "./parameters";
+import {extensionParameters} from "@/parameters";
 
 export const logger = functions.logger;
 
-export const normalize = (input: object): string => {
+export const normalize = (input: string | number | boolean | object): string => {
   if (["number", "string", "bigint"].includes(typeof input)) {
     return "" + input;
   } else if (typeof input == "boolean") {

@@ -120,13 +120,3 @@ params:
     default: no
     required: true
     immutable: false
-
-  - param: GOOGLE_API_CREDENTIALS_CLIENT_EMAIL
-    label: Client Email of the Service API [Not Required]
-    type: secret
-    required: false
-
-  - param: GOOGLE_API_CREDENTIALS_PRIVATE_KEY
-    label: Private Key of the Service API [Not Required]
-    type: secret
-    required: false

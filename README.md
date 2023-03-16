@@ -41,8 +41,6 @@ To install an extension, your project must be on the [Blaze (pay as you go) plan
 
 - Firebase App Check: [Firebase App check](https://firebase.google.com/docs/app-check) helps protect your API resources from abuse by preventing unauthorized clients from accessing your backend resources. You can enable this parameter to enable App check.
 
-- Google Api Crendetials: By default, this extension will use the project's credentials to connect to the Google Spreadsheets Api but with `CLIENT_EMAIL` and `PRIVATE_KEY` you can override the default.
-
 **Cloud Functions:**
 
 - **saveRecord:** Receive your data through a http post request and save that in the Spreadsheet

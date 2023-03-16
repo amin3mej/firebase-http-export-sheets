@@ -1,25 +1,12 @@
 import {intToExcelCol} from "excel-column-name";
-import type {GoogleAuthOptions} from "google-auth-library";
 import {google} from "googleapis";
 
 import {extensionParameters} from "./parameters";
-import {logger} from "./utilities";
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 async function getSheet() {
-  const googleAuthConfiguration : GoogleAuthOptions = {scopes: SCOPES};
-  if (extensionParameters.GOOGLE_API_CREDENTIALS_CLIENT_EMAIL &&
-    extensionParameters.GOOGLE_API_CREDENTIALS_PRIVATE_KEY) {
-    logger.debug("Spreadsheet::getSheet: Using Env Credentials");
-    googleAuthConfiguration.credentials = {
-      client_email: extensionParameters.GOOGLE_API_CREDENTIALS_CLIENT_EMAIL,
-      private_key: extensionParameters.GOOGLE_API_CREDENTIALS_PRIVATE_KEY,
-    };
-  } else {
-    logger.debug("Spreadsheet::getSheet: Using Application Default Credentials");
-  }
-  const auth = await google.auth.getClient(googleAuthConfiguration);
+  const auth = await google.auth.getClient({scopes: SCOPES});
   return google.sheets({version: "v4", auth: auth}).spreadsheets;
 }
 

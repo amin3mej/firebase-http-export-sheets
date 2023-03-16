@@ -25,5 +25,3 @@ To install an extension, your project must be on the [Blaze (pay as you go) plan
 - Allowed Fields: By separating names with commas (,), you can indicate a list of allowed names to process. If this field is set, any fields not allowed will be ignored. An asterisk (*) will allow all fields.
 
 - Firebase App Check: [Firebase App check](https://firebase.google.com/docs/app-check) helps protect your API resources from abuse by preventing unauthorized clients from accessing your backend resources. You can enable this parameter to enable App check.
-
-- Google Api Crendetials: By default, this extension will use the project's credentials to connect to the Google Spreadsheets Api but with `CLIENT_EMAIL` and `PRIVATE_KEY` you can override the default.

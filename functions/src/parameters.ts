@@ -3,8 +3,6 @@ export type ExtensionParameters = {
   GOOGLE_SPREADSHEET_SHEET_ID: string;
   ALLOWED_FIELDS?: string;
   APP_CHECK: "yes" | "no";
-  GOOGLE_API_CREDENTIALS_CLIENT_EMAIL?: string;
-  GOOGLE_API_CREDENTIALS_PRIVATE_KEY?: string;
   EMPTY_CELL: string;
 };
 
@@ -13,8 +11,6 @@ const {
   GOOGLE_SPREADSHEET_SHEET_ID,
   ALLOWED_FIELDS,
   APP_CHECK,
-  GOOGLE_API_CREDENTIALS_CLIENT_EMAIL,
-  GOOGLE_API_CREDENTIALS_PRIVATE_KEY,
   EMPTY_CELL = "",
 } = process.env as ExtensionParameters;
 
@@ -23,7 +19,5 @@ export const extensionParameters: ExtensionParameters = {
   GOOGLE_SPREADSHEET_SHEET_ID,
   ALLOWED_FIELDS,
   APP_CHECK,
-  GOOGLE_API_CREDENTIALS_CLIENT_EMAIL,
-  GOOGLE_API_CREDENTIALS_PRIVATE_KEY,
   EMPTY_CELL,
 };

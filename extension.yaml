@@ -1,5 +1,5 @@
 name: http-export-sheets
-version: 0.1.1
+version: 0.1.2
 specVersion: v1beta
 icon: logo.png
 displayName: Save Form Responses to Google Sheets

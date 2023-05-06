@@ -1,3 +1,7 @@
+## Version 0.1.4
+
+docs - improve preinstall and postinstall documentions
+
 ## Version 0.1.3
 
 docs - change extension name

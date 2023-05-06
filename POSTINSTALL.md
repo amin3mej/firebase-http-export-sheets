@@ -1,3 +1,13 @@
+### Additional setup
+
+Once you've installed this extension, make sure to grant it permission to write to your spreadsheet. Follow these steps:
+
+1. Find the account name for the installed extension in the [Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts) section. The name will look something like `ext-{extension-instance-id}@{project-id}.iam.gserviceaccount.com`.
+2. Open the spreadsheet file you want to share. You must be the owner or have edit access to the spreadsheet.
+3. Click the "Share" button.
+4. Enter the extension account name found in step 1 and grant it write permission.
+5. Click "Send".
+
 ### Using this extension
 
 Using the extension is really easy. Send a request to `https://${LOCATION}-${PROJECT_ID}.cloudfunctions.net/ext-${EXT_INSTANCE_ID}-saveRecord` to see them in your spreadsheet immediately.

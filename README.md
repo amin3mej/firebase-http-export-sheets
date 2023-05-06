@@ -1,4 +1,4 @@
-# Save Form Responses to Google Sheets
+# Save Forms to Google Sheets
 
 **Author**: Amin Djawadi (**[https://github.com/amin3mej](https://github.com/amin3mej)**)
 

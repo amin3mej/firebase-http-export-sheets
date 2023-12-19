@@ -1,5 +1,5 @@
-import * as parameters from "@/parameters";
-import {getAllowedFields, normalize} from "@/utilities";
+import * as parameters from "./parameters";
+import {getAllowedFields, normalize} from "./utilities";
 describe("Normalize function", () => {
   test("it should normalize different type of data", () => {
     const objectToTest = {testKey: "testValue"};
@@ -14,7 +14,7 @@ describe("Normalize function", () => {
   });
 });
 
-jest.mock("@/parameters", () => ({
+jest.mock("./parameters", () => ({
   __esModule: true,
   extensionParameters: {ALLOWED_FIELDS: null},
 }));

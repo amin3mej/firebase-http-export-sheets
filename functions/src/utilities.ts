@@ -1,4 +1,4 @@
-import {extensionParameters} from "@/parameters";
+import {extensionParameters} from "./parameters";
 
 export const normalize = (input: string | number | boolean | object): string => {
   if (["number", "string", "bigint"].includes(typeof input)) {

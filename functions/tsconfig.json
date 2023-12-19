@@ -1,5 +1,4 @@
 {
-  "extends": "./tsconfig.aliases.json",
   "compilerOptions": {
     "module": "commonjs",
     "noImplicitReturns": true,
@@ -20,6 +19,6 @@
     "resolveJsonModule": true,
   },
   "compileOnSave": true,
-  "include": ["src", "__tests__"],
+  "include": ["src"],
   "files": ["jest.config.ts"]
 }

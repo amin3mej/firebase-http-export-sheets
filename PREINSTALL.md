@@ -13,3 +13,8 @@ To install an extension, your project must be on the [Blaze (pay as you go) plan
 - You will be charged a small amount (typically around $0.01/month) for the Firebase resources required by this extension (even if it is not used).
 - This extension uses other Firebase and Google Cloud Platform services, which have associated charges if you exceed the service’s no-cost tier:
 - Cloud Functions (Node.js 10+ runtime. [See FAQs](https://firebase.google.com/support/faq#extensions-pricing))
+
+
+### Important Update
+
+Please note that the previous URL for installing the extension, `https://extensions.dev/extensions/amin3mej/http-export-sheets`, has been deprecated. Going forward, you should install the extension through the new URL: `https://extensions.dev/extensions/djawadi/http-export-sheets`.
